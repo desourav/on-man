@@ -5,7 +5,7 @@ There are superheroes and then there is `on-man`.
 
 ## why run on-man in local
 
-Before getting into the section: `how to run on-man in local`, these are the reasons the application was not hosted in AWS EC2:
+Before getting into the section: [how to run on-man in local](https://github.com/desourav/on-man?tab=readme-ov-file#how-to-run-on-man-in-local), these are the reasons the application was not hosted in AWS EC2:
 
 Pros
 - the developers would know how the services interact with each other even before deploying into a managed kubernetes cluster
@@ -36,4 +36,3 @@ scripts/configure-db.sh
 # Deploys the app and port-forwards it into `localhost:4000`
 scripts/deploy-app.sh
 ```
-
