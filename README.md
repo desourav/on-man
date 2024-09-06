@@ -14,6 +14,7 @@ Pros
 - it's very quick and easy to check application logs and connect to local `mySQL` database with virtually no lag.
 
 Cons
+- Tried the option mentioned in the section how to deploy using lambda function, but the application would fetch `{"message": "Internal server error"}`
 - AWS EKS doesn't have a free tier option
 - another option is to get AWS EC2 instance - install docker and kubernetes - apply the `kubernetes/*.yaml`. On trying this option most of the time, the free-tier env would freeze or won't respond to simple `kubectl` commands
 - although the `security groups` were added to allow `ALL` for `ssh` connection, 4/5 times the `ssh` won't work making debugging impossible.
@@ -36,3 +37,24 @@ scripts/configure-db.sh
 # Deploys the app and port-forwards it into `localhost:4000`
 scripts/deploy-app.sh
 ```
+
+## how to deploy using lambda function
+
+1.  create a lambda function and upload the nodeJS code as zip
+![alt text](image.png)
+
+2. add a trigger to the lambda function
+    - create a new apigateway
+    - integrate it with the above
+    - deploy the same
+
+   ![alt text](image-1.png)
+
+3. ensure the integration is mapped correctly
+![alt text](image-2.png)
+
+4. blocker
+    - the url generated gives `internal server error`
+    - there is no way to integrate the app with a dockerized `mySQL` database. 
+    - one option could be to create a mySQL instance - point the private endpoint and credentials to the express app as env variable
+    - last but not the least, completing the functional requirement with express + mySQL in the PoC was of utmost importance. If time permits one can explore the AWS offerings and deploy the setup in a managed environment with lesser point of failure.
