@@ -1,0 +1,31 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" version="24.7.12">
+  <diagram name="Page-1" id="G7BgJ-LmOUiGPklKZhLO">
+    <mxGraphModel dx="1242" dy="734" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="RncXROPEYOgEfF-oAxky-1" value="id: int &amp;lt;primary_key&amp;gt;&lt;div&gt;diagnosis: varchar&lt;/div&gt;&lt;div&gt;alternate_name: varchar&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;align=left;" vertex="1" parent="1">
+          <mxGeometry x="80" y="120" width="140" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="RncXROPEYOgEfF-oAxky-2" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;id: int &amp;lt;primary_key&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;firstName: varchar&lt;/div&gt;&lt;div style=&quot;&quot;&gt;lastName: varchar&lt;/div&gt;&lt;div style=&quot;&quot;&gt;role: varchar &amp;lt;constraint: admin, reader&amp;gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;align=left;" vertex="1" parent="1">
+          <mxGeometry x="540" y="120" width="180" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="RncXROPEYOgEfF-oAxky-3" value="id: &amp;lt;primary_key&amp;gt;&lt;div&gt;parent_id*: &amp;lt;CONCEPT.foreign_key&amp;gt;&lt;/div&gt;&lt;div&gt;child_id*: &amp;lt;&lt;span style=&quot;background-color: initial;&quot;&gt;CONCEPT.&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;foreign_key&amp;gt;&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;align=left;" vertex="1" parent="1">
+          <mxGeometry x="290" y="310" width="230" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="RncXROPEYOgEfF-oAxky-6" value="CONCEPT" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="100" y="90" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RncXROPEYOgEfF-oAxky-7" value="CONCEPT_MAP" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="330" y="280" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RncXROPEYOgEfF-oAxky-8" value="USER" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="590" y="90" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RncXROPEYOgEfF-oAxky-9" value="*nullable, if not NULL then it should exist in CONCEPT" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="260" y="550" width="310" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
