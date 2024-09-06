@@ -1,14 +1,17 @@
 # on-man
+Before delving deep in the code, highly recommend to watch the short video that explains and demo the application.
+
 There are superheroes and then there is `on-man`.
 
-`on-man` is the **Ontology Manager**, an application to manage master data for Ontology. This application contains:
+`on-man` is the **Ontology Manager**, an application to manage master data for Ontology. This code repository contains:
 
 1. NodeJS express application that has been dockerized and pushed to dockerhub
 2. MySQL database that the express app connects to fetch/update/delete concepts
-3. Kubernetes resources under [kubernetes folder](kubernetes) that can be applied to any k8s cluster for a fully-functional application with persistent DB
-4. flexibility to run the application in local
+3. Dockerfile to package the express application into an image
+4. Kubernetes resources under [kubernetes folder](kubernetes) that can be applied to any k8s cluster for a fully-functional application with persistent DB
+5. flexibility to run the application in local
 
-## Assignment progress
+## assignment progress
 - [TASK 1](tasks/task1-readme.md)
 - [TASK 2](tasks/task2-readme.md)
 - [TASK 3](tasks/task3-readme.md)
