@@ -1,7 +1,17 @@
 # on-man
 There are superheroes and then there is `on-man`.
 
-`on-man` is the **Ontology Manager**, an application to manage master data for Ontology
+`on-man` is the **Ontology Manager**, an application to manage master data for Ontology. This application contains:
+
+1. NodeJS express application that has been dockerized and pushed to dockerhub
+2. MySQL database that the express app connects to fetch/update/delete concepts
+3. Kubernetes resources under [kubernetes folder](kubernetes) that can be applied to any k8s cluster for a fully-functional application with persistent DB
+4. flexibility to run the application in local
+
+## Assignment progress
+- [TASK 1](tasks/task1-readme.md)
+- [TASK 2](tasks/task2-readme.md)
+- [TASK 3](tasks/task3-readme.md)
 
 ## why run on-man in local
 
@@ -14,13 +24,14 @@ Pros
 - it's very quick and easy to check application logs and connect to local `mySQL` database with virtually no lag.
 
 Cons
-- Tried the option mentioned in the section how to deploy using lambda function, but the application would fetch `{"message": "Internal server error"}`
+- Tried the option mentioned in the section [how to deploy using lambda function](https://github.com/desourav/on-man?tab=readme-ov-file#how-to-deploy-using-lambda-function), but the application would fetch `{"message": "Internal server error"}`
 - AWS EKS doesn't have a free tier option
-- another option is to get AWS EC2 instance - install docker and kubernetes - apply the `kubernetes/*.yaml`. On trying this option most of the time, the free-tier env would freeze or won't respond to simple `kubectl` commands
+- Tried another option is to get AWS EC2 instance - install docker and kubernetes - apply the `kubernetes/*.yaml`. On trying this option most of the time, the free-tier env would freeze or won't respond to simple `kubectl` commands
 - although the `security groups` were added to allow `ALL` for `ssh` connection, 4/5 times the `ssh` won't work making debugging impossible.
 
 
 ## how to run on-man in local
+**Note**: The pre-requisite is you have some variation of docker running locally. Like [Docker Desktop for Mac](https://docs.docker.com/desktop/install/mac-install/).
 
 Run the following scripts in order mentioned below:
 
@@ -38,20 +49,27 @@ scripts/configure-db.sh
 scripts/deploy-app.sh
 ```
 
+Destroy everything:
+
+```
+kind delete cluster
+```
+
+
 ## how to deploy using lambda function
 
 1.  create a lambda function and upload the nodeJS code as zip
-![alt text](image.png)
+![alt text](images-png/image.png)
 
 2. add a trigger to the lambda function
     - create a new apigateway
     - integrate it with the above
     - deploy the same
 
-   ![alt text](image-1.png)
+   ![alt text](images-png/image-1.png)
 
 3. ensure the integration is mapped correctly
-![alt text](image-2.png)
+![alt text](images-png/image-2.png)
 
 4. blocker
     - the url generated gives `internal server error`
