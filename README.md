@@ -12,9 +12,12 @@ There are superheroes and then there is `on-man`.
 5. Flexibility to run the application in local kubernetes environment
 
 ## assignment progress
-- [TASK 1](tasks/task1-readme.md)
-- [TASK 2](tasks/task2-readme.md)
-- [TASK 3](tasks/task3-readme.md)
+
+The progress of each of the tasks can be found here:
+
+- [TASK 1](tasks/task1-readme.md): Implementing the business requirement as PoC
+- [TASK 2](tasks/task2-readme.md): Target application architecture as a scalable solution on cloud
+- [TASK 3](tasks/task3-readme.md): Proposals, Concerns and Questions
 
 ## why run on-man in local
 
