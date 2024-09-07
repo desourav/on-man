@@ -9,7 +9,7 @@ There are superheroes and then there is `on-man`.
 2. MySQL database that the express app connects to fetch/update/delete concepts
 3. Dockerfile to package the express application into an image
 4. Kubernetes resources under [kubernetes folder](kubernetes) that can be applied to any k8s cluster for a fully-functional application with persistent DB
-5. flexibility to run the application in local
+5. Flexibility to run the application in local kubernetes environment
 
 ## assignment progress
 - [TASK 1](tasks/task1-readme.md)
@@ -18,19 +18,19 @@ There are superheroes and then there is `on-man`.
 
 ## why run on-man in local
 
-Before getting into the section: [how to run on-man in local](https://github.com/desourav/on-man?tab=readme-ov-file#how-to-run-on-man-in-local), these are the reasons the application was not hosted in AWS EC2:
+Before getting into the section: [how to run on-man in local](https://github.com/desourav/on-man?tab=readme-ov-file#how-to-run-on-man-in-local), these are the attempts made and reasons the application was not hosted in AWS Free Tier:
 
 Pros
-- the developers would know how the services interact with each other even before deploying into a managed kubernetes cluster
+- the developers would know how the microservices interact with each other even before deploying into a managed kubernetes cluster
 - this setup uses `Kind` a lightweight kubernetes cluster that can be used in any computer.
 - this setup mimics a kubernetes cluster and if the PoC is successful on a demo computer, all one has to do is apply the `kubernetes/*.yaml` file in the managed kubernetes cluster
-- it's very quick and easy to check application logs and connect to local `mySQL` database with virtually no lag.
+- it's very quick and easy to check application logs and connect to local `mySQL` database with virtually no lag. Again, please check the video that shows all the details of this application.
 
 Cons
 - Tried the option mentioned in the section [how to deploy using lambda function](https://github.com/desourav/on-man?tab=readme-ov-file#how-to-deploy-using-lambda-function), but the application would fetch `{"message": "Internal server error"}`
 - AWS EKS doesn't have a free tier option
 - Tried another option is to get AWS EC2 instance - install docker and kubernetes - apply the `kubernetes/*.yaml`. On trying this option most of the time, the free-tier env would freeze or won't respond to simple `kubectl` commands
-- although the `security groups` were added to allow `ALL` for `ssh` connection, 4/5 times the `ssh` won't work making debugging impossible.
+- Although the `security groups` were added to allow `ALL` for `ssh` connection, 4/5 times the `ssh` won't work making debugging impossible.
 
 
 ## how to run on-man in local
@@ -62,17 +62,17 @@ kind delete cluster
 ## how to deploy using lambda function
 
 1.  create a lambda function and upload the nodeJS code as zip
-![alt text](images-png/image.png)
+![alt text](images-png/lambda-function.png)
 
 2. add a trigger to the lambda function
     - create a new apigateway
     - integrate it with the above
     - deploy the same
 
-   ![alt text](images-png/image-1.png)
+   ![alt text](images-png/apigateway.png)
 
 3. ensure the integration is mapped correctly
-![alt text](images-png/image-2.png)
+![alt text](images-png/lambda-apigateway.png)
 
 4. blocker
     - the url generated gives `internal server error`
