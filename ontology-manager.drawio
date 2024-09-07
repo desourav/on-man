@@ -11,7 +11,7 @@
           <mxGeometry x="150" y="940" width="620" height="200" as="geometry" />
         </mxCell>
         <mxCell id="RncXROPEYOgEfF-oAxky-28" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;" vertex="1" parent="1">
-          <mxGeometry x="80" y="793" width="220" height="140" as="geometry" />
+          <mxGeometry x="80" y="745" width="220" height="140" as="geometry" />
         </mxCell>
         <mxCell id="RncXROPEYOgEfF-oAxky-10" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
           <mxGeometry x="30" y="40" width="760" height="550" as="geometry" />
@@ -68,21 +68,16 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="RncXROPEYOgEfF-oAxky-22" value="MYSQL DB (PRIMARY)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
-          <mxGeometry x="110" y="843" width="70" height="80" as="geometry" />
+          <mxGeometry x="110" y="795" width="70" height="80" as="geometry" />
         </mxCell>
         <mxCell id="RncXROPEYOgEfF-oAxky-23" value="MYSQL DB (STANDBY)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
-          <mxGeometry x="200" y="843" width="70" height="80" as="geometry" />
+          <mxGeometry x="200" y="795" width="70" height="80" as="geometry" />
         </mxCell>
         <mxCell id="RncXROPEYOgEfF-oAxky-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="RncXROPEYOgEfF-oAxky-22" target="RncXROPEYOgEfF-oAxky-23">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="RncXROPEYOgEfF-oAxky-27" value="Internal Synchronization" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="120" y="793" width="150" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="RncXROPEYOgEfF-oAxky-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.508;entryY=0.113;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="RncXROPEYOgEfF-oAxky-29" target="RncXROPEYOgEfF-oAxky-41">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="440" y="873" as="targetPoint" />
-          </mxGeometry>
+          <mxGeometry x="120" y="745" width="150" height="30" as="geometry" />
         </mxCell>
         <mxCell id="RncXROPEYOgEfF-oAxky-29" value="Scientist" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
           <mxGeometry x="400" y="720" width="20" height="40" as="geometry" />
@@ -113,8 +108,8 @@
         <mxCell id="RncXROPEYOgEfF-oAxky-38" value="receive token" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="450" y="740" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="RncXROPEYOgEfF-oAxky-40" value="call API endpoint with valid token" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="410" y="813" width="200" height="30" as="geometry" />
+        <mxCell id="RncXROPEYOgEfF-oAxky-40" value="call API endpoint with valid token&lt;div&gt;read/write data&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="410" y="808" width="200" height="40" as="geometry" />
         </mxCell>
         <mxCell id="RncXROPEYOgEfF-oAxky-41" value="INGRESS PUBLIC ENDPOINT" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="390" y="850" width="120" height="80" as="geometry" />
@@ -125,11 +120,20 @@
         <mxCell id="RncXROPEYOgEfF-oAxky-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="RncXROPEYOgEfF-oAxky-44" target="RncXROPEYOgEfF-oAxky-28">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="RncXROPEYOgEfF-oAxky-44" value="DATA-VALIDATOR APP CRONJOB" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="RncXROPEYOgEfF-oAxky-44" value="ON-ALIGN APP CRONJOB" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="175" y="962" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="RncXROPEYOgEfF-oAxky-45" value="Eventual Data Accuracy" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="155" y="940" width="150" height="30" as="geometry" />
+        <mxCell id="RncXROPEYOgEfF-oAxky-45" value="Eventual Data Alignment&lt;div&gt;(with complex validation)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="230" y="892" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RncXROPEYOgEfF-oAxky-49" value="Fast Data Write&amp;nbsp;&lt;div&gt;(with simple validation)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="60" y="900" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RncXROPEYOgEfF-oAxky-50" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=1;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.25;exitY=0.25;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="RncXROPEYOgEfF-oAxky-41" target="RncXROPEYOgEfF-oAxky-29">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="940" as="sourcePoint" />
+            <mxPoint x="450" y="890" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
