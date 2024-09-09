@@ -29,16 +29,16 @@ ontology-manager-service   NodePort    10.96.185.63   <none>        4000:32109/T
 ## api endpoints and actions
 
 Following apiendpoints and actions are supported:
-- `GET /concepts`: fetch all concepts in the database
+- `GET /concepts`: FETCH ALL CONCEPTS IN THE DATABASE
 
     ![alt text](../images-png/GET_all.png)
 
 
-- `GET /concepts/:id`: fetch a specific concept using `id`
+- `GET /concepts/:id`: FETCH A SPECIFIC CONCEPT USING `id`
 
     ![alt text](../images-png/GET_id.png)
 
-- `POST /concepts`: create a concept using JSON payload (supports **admin** only)
+- `POST /concepts`: CREATE A CONCEPT USING JSON PAYLOAD (supports **admin** only)
     
     payload:
     ```
@@ -64,7 +64,7 @@ Following apiendpoints and actions are supported:
 
     ![alt text](../images-png/POST_non_admin.png)
 
-- `PUT /concepts`: update a concept using JSON payload (supports **admin** only)
+- `PUT /concepts`: UPDATE A CONCEPT USING JSON PAYLOAD (supports **admin** only)
     
     payload:
     ```
@@ -89,7 +89,7 @@ Following apiendpoints and actions are supported:
     **NOTE**: updating a concept without admin (header `x-role: admin`) throws `401 Unauthorized` error
 
 
-- `DELETE /concepts/:id`: delete a concept using `id` (supports **admin** only)
+- `DELETE /concepts/:id`: DELETE A CONCEPT USING `id` (supports **admin** only)
 
     header (for `admin`):
     ```
@@ -126,13 +126,13 @@ The `PUT` update request is invalidated with `501` error.
 ### alignment
 These are alignment that will be done by the `on-align` application running as `cronJob` once every `n` hours. As these alignments involve querying multiple concepts in a database with petabytes of data, it will require longer time for alignment. As such they are not included in the application `on-man` which focuses on faster reads and writes with immediate responses to the end users.
 
-1. if a concept is created/updated: 
+1. IF A CONCEPT IS CREATED/UPDATED: 
 
     - update all parents in concept.parent to claim the concept to be their child
 
     - update all children in concept.child to claim the concept to be their parent
 
-2. if a concept is deleted:
+2. IF A CONCEPT IS DELETED:
 
     - remove it as a child from the list of children in parent concepts
 
