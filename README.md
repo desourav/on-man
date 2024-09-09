@@ -8,8 +8,8 @@ There are superheroes and then there is `on-man`.
 1. NodeJS express application that has been dockerized and pushed to dockerhub
 2. MySQL database that the express app connects to fetch/update/delete concepts
 3. Dockerfile to package the express application into an image
-4. Kubernetes resources under [kubernetes folder](kubernetes) that can be applied to any k8s cluster for a fully-functional application with persistent DB
-5. Flexibility to run the application in local kubernetes environment
+4. Production ready set up validated in kubernetes cluster in local
+5. Kubernetes resources under [kubernetes folder](kubernetes) that can be applied to any k8s cluster for a fully-functional application with persistent DB
 
 ## assignment progress
 
