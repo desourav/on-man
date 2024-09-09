@@ -117,6 +117,12 @@ These are validations handled by the `on-man` application when a user attempts t
 3. if parent != '', concept cannot have a non-existing parent
 4. if child != '', concept cannot have a non-existing child
 
+For example: the concept_id `5` is trying to refer `8` as child which doesn't exist in the database.
+The `PUT` update request is invalidated with `501` error.
+
+
+![alt text](../images-png/PUT_invalid_payload.png)
+
 ### alignment
 These are alignment that will be done by the `on-align` application running as `cronJob` once every `n` hours. As these alignments involve querying multiple concepts in a database with petabytes of data, it will require longer time for alignment. As such they are not included in the application `on-man` which focuses on faster reads and writes with immediate responses to the end users.
 
