@@ -6,7 +6,7 @@ The business requirement is achieved by implementing:
 
 ## kubernetes environment
 
-Once On-Man is deployed using the steps mentioned in the README, the nodeJS application and backend mySQL DB should look like:
+Once On-Man is deployed using the [steps](https://github.com/desourav/on-man?tab=readme-ov-file#how-to-run-on-man-in-local) mentioned in the README, the nodeJS application and backend mySQL DB should look like:
 
 ### Pods
 
