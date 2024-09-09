@@ -135,4 +135,4 @@ These are alignment that will be done by the `on-align` application running as `
 
 ## database view
 
-TODO: screenshot of the database view
+![alt text](../images-png/database.png)
