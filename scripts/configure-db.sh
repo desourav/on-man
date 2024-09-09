@@ -7,12 +7,13 @@ mysql -u root -ppassword -h 127.0.0.1 -e 'SHOW DATABASES;'
 mysql -u root -ppassword -h 127.0.0.1 -e 'CREATE DATABASE `on-man`;'
 
 mysql -u root -ppassword -h 127.0.0.1 -e 'CREATE TABLE `on-man`.`clinical-concept` (
-	ID INT NOT NULL,
-	concept varchar(100) NOT NULL,
+	id INT NOT NULL,
+	displayName varchar(100) NOT NULL,
+	description varchar(100) NULL,
 	parent varchar(100) NULL,
 	child varchar(100) NULL,
 	alternateName varchar(100) NULL,
-	PRIMARY KEY (ID)
+	PRIMARY KEY (id)
 );'
 
 

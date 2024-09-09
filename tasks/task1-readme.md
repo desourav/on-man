@@ -29,68 +29,78 @@ ontology-manager-service   NodePort    10.96.185.63   <none>        4000:32109/T
 ## api endpoints and actions
 
 Following apiendpoints and actions are supported:
-- `GET /posts`: fetch all concepts in the database
+- `GET /concepts`: fetch all concepts in the database
 
     ![alt text](../images-png/GET_all.png)
 
 
-- `GET /posts/:id`: fetch a specific concept using `id`
+- `GET /concepts/:id`: fetch a specific concept using `id`
 
-    TODO: screenshot of GET specific concept
+    ![alt text](../images-png/GET_id.png)
 
-- `POST /posts`: create a concept using JSON payload (supports **admin** only)
+- `POST /concepts`: create a concept using JSON payload (supports **admin** only)
     
-    Example payload:
+    payload:
     ```
     {
-        "ID": 1,
+        "id": 1,
         "parent": "",
-        "child": "2,3",
-        "alternateName": "Physical Diagnosis",
-        "concept": "Physical"
+        "child": "",
+        "alternateName": "",
+        "displayName": "Diagnosis",
+        "description": "Entity domain"
     }
     ```
-    Example header (for `admin`):
+    header (for `admin`):
     ```
     x-role: admin
     ```
 
-    TODO: screenshot of create a concept with admin (header `x-role: admin`)
+    create a concept with admin (header `x-role: admin`)
 
-    TODO: screenshot of create a concept without admin (header `x-role: admin`) throwing `401 Unauthorized` error
+    ![alt text](../images-png/POST_admin.png)
 
-- `PUT /posts`: update a concept using JSON payload (supports **admin** only)
+    create a concept without admin (header `x-role: admin`) throwing `401 Unauthorized` error
+
+    ![alt text](../images-png/POST_non_admin.png)
+
+- `PUT /concepts`: update a concept using JSON payload (supports **admin** only)
     
-    Example payload:
+    payload:
     ```
     {
-        "ID": 1,
-        "parent": "",
-        "child": "2,3",
-        "alternateName": "Physical Diagnosis",
-        "concept": "Physical"
+        "id": 2,
+        "parent": "1",
+        "child": "",
+        "alternateName": "",
+        "displayName": "Disease of Nervous System",
+        "description": "Diseases targeting the nervous system"
     }
     ```
-    Example header (for `admin`):
+    header (for `admin`):
     ```
     x-role: admin
     ```
 
-    TODO: screenshot of update a concept with admin (header `x-role: admin`)
+    update a concept with admin (header `x-role: admin`)
 
-    TODO: screenshot of update a concept without admin (header `x-role: admin`) throwing `401 Unauthorized` error
+    ![alt text](../images-png/PUT_concept.png)
+
+    **NOTE**: updating a concept without admin (header `x-role: admin`) throws `401 Unauthorized` error
 
 
-- `DELETE /posts/:id`: delete a concept using `id` (supports **admin** only)
+- `DELETE /concepts/:id`: delete a concept using `id` (supports **admin** only)
 
-    Example header (for `admin`):
+    header (for `admin`):
     ```
     x-role: admin
     ```
 
-    TODO: screenshot of delete a concept with admin (header `x-role: admin`)
+    delete a concept with admin (header `x-role: admin`)
 
-    TODO: screenshot of delete a concept without admin (header `x-role: admin`) throwing `401 Unauthorized` error
+    ![alt text](../images-png/DELETE_id.png)
+
+    **NOTE**: deleting a concept without admin (header `x-role: admin`) throws `401 Unauthorized` error
 
 ## authorization implementation 
 

@@ -7,7 +7,7 @@ import { validate } from '../util/data-validation';
 export const getAllConcepts = async (req: Request, res: Response, next: NextFunction) => {
     try {
         console.log(`INFO: get all concepts in the database`);
-        const sql: string = "SELECT ID, parent, child, alternateName, concept FROM `clinical-concept`;"
+        const sql: string = "SELECT id, displayName, description, parent, child, alternateName FROM `clinical-concept`;"
         let result = await connectionPool.execute(sql);
         res.status(200).json(result[0]);
     } catch (error) {
@@ -21,7 +21,7 @@ export const getAllConcepts = async (req: Request, res: Response, next: NextFunc
 export const getConceptByID = async (req: Request, res: Response, next: NextFunction) => {
 try {
     console.log(`INFO: get concept: ${req.params.id} in the database`);
-    const sql: string = "SELECT ID, parent, child, alternateName, concept FROM `clinical-concept` where ID = " + req.params.id + ";"
+    const sql: string = "SELECT id, displayName, description, parent, child, alternateName FROM `clinical-concept` where id = " + req.params.id + ";"
     let result = await connectionPool.execute(sql);
     
     if (JSON.stringify(result[0]) == "[]") {
@@ -40,7 +40,7 @@ export const createConceptByID = async (req: Request, res: Response, next: NextF
     try {
         // only allow admin to perform create
         if (req.headers['x-role'] != 'admin') {
-            console.log(`INFO: unauthorized attempt to create concept: ${req.body.ID}`);
+            console.log(`INFO: unauthorized attempt to create concept: ${req.body.id}`);
             res.status(401).json({
                 "message": "User Unauthorized"
             });
@@ -48,16 +48,17 @@ export const createConceptByID = async (req: Request, res: Response, next: NextF
         }
         
         const concept:OntologyConcept = {
-            id: req.body.ID,
-            concept: req.body.concept,
-            parent: req.body.parent,
-            child: req.body.child,
-            alternateName: req.body.alternateName
+            id: req.body.id,
+            displayName: req.body.displayName,
+            description: (req.body.description ==  undefined) ? "" : req.body.description,
+            parent: (req.body.parent == undefined) ? "" : req.body.parent,
+            child: (req.body.child == undefined) ? "" : req.body.child,
+            alternateName: (req.body.alternateName == undefined) ? "" : req.body.alternateName
         }
 
         let isValid = await validate(req);
         if ( isValid == false) {
-            console.log(`INFO: data validation error for concept: ${req.body.ID}`);
+            console.log(`INFO: data validation error for concept: ${req.body.id}`);
             res.status(501).json({
                 "message": "Data validation error"
             });
@@ -66,7 +67,7 @@ export const createConceptByID = async (req: Request, res: Response, next: NextF
 
         console.log(`INFO: create concept ${concept.id} in the database`);
         // const concept: Concept = new Concept(conceptObj);
-        const sql: string = "INSERT INTO `clinical-concept` (ID, concept, parent, child, alternateName) VALUES(" + `'${concept.id}', '${concept.concept}', '${concept.parent}', '${concept.child}', '${concept.alternateName}');`
+        const sql: string = "INSERT INTO `clinical-concept` (id, displayName, description, parent, child, alternateName) VALUES(" + `'${concept.id}', '${concept.displayName}', '${concept.description}', '${concept.parent}', '${concept.child}', '${concept.alternateName}');`
         let result = await connectionPool.execute(sql);
         res.status(200).json(result[0]);
     } catch (error) {
@@ -80,7 +81,7 @@ export const updateConceptByID = async (req: Request, res: Response, next: NextF
     try {
         // only allow admin to perform update
         if (req.headers['x-role'] != 'admin') {
-            console.log(`INFO: unauthorized attempt to update concept: ${req.body.ID}`);
+            console.log(`INFO: unauthorized attempt to update concept: ${req.body.id}`);
             res.status(401).json({
                 "message": "User Unauthorized"
             });
@@ -89,7 +90,7 @@ export const updateConceptByID = async (req: Request, res: Response, next: NextF
 
         let isValid = await validate(req);
         if (isValid == false) {
-            console.log(`INFO: data validation error for concept: ${req.body.ID}`);
+            console.log(`INFO: data validation error for concept: ${req.body.id}`);
             res.status(501).json({
                 "message": "Data validation error"
             });
@@ -97,14 +98,15 @@ export const updateConceptByID = async (req: Request, res: Response, next: NextF
         }
         
         const concept:OntologyConcept = {
-            id: req.body.ID,
-            concept: req.body.concept,
-            parent: req.body.parent,
-            child: req.body.child,
-            alternateName: req.body.alternateName
+            id: req.body.id,
+            displayName: req.body.displayName,
+            description: (req.body.description ==  undefined) ? "" : req.body.description,
+            parent: (req.body.parent == undefined) ? "" : req.body.parent,
+            child: (req.body.child == undefined) ? "" : req.body.child,
+            alternateName: (req.body.alternateName == undefined) ? "" : req.body.alternateName
         }
         console.log(`INFO: update concept ${concept.id} in the database`);
-        const sql: string = "UPDATE `clinical-concept` SET concept = " + `'${concept.concept}'` + ", parent = " + `'${concept.parent}'` + ", child = " + `'${concept.child}'` + ", alternateName = " + `'${concept.alternateName}'` + " WHERE ID = " + `'${concept.id}';`
+        const sql: string = "UPDATE `clinical-concept` SET displayName = " + `'${concept.displayName}'` + ", description = " + `'${concept.description}'` + ", parent = " + `'${concept.parent}'` + ", child = " + `'${concept.child}'` + ", alternateName = " + `'${concept.alternateName}'` + " WHERE id = " + `'${concept.id}';`
         let result = await connectionPool.execute(sql);
         res.status(200).json(result[0]);
     } catch (error) {

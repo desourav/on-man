@@ -3,5 +3,6 @@ export interface OntologyConcept  {
     parent?: string, 
     child?: string, 
     alternateName?: string, 
-    concept: string
+    displayName: string,
+    description?: string
 }
