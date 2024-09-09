@@ -31,7 +31,8 @@ ontology-manager-service   NodePort    10.96.185.63   <none>        4000:32109/T
 Following apiendpoints and actions are supported:
 - `GET /posts`: fetch all concepts in the database
 
-    TODO: screenshot of GET all concepts
+    ![alt text](../images-png/GET_all.png)
+
 
 - `GET /posts/:id`: fetch a specific concept using `id`
 
