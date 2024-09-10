@@ -1,5 +1,5 @@
 # on-man
-Before delving deep in the code, highly recommend to watch the short [video](https://youtu.be/x8hrLbfF42U) that explains and demo the application.
+Before delving deep in the code, highly recommend to watch the short 5 minute [video](https://youtu.be/x8hrLbfF42U) that explains and demo the application.
 
 There are superheroes and then there is `on-man`.
 
