@@ -1,5 +1,5 @@
 # on-man
-Before delving deep in the code, highly recommend to watch the short video that explains and demo the application.
+Before delving deep in the code, highly recommend to watch the short [video](https://youtu.be/x8hrLbfF42U) that explains and demo the application.
 
 There are superheroes and then there is `on-man`.
 
@@ -27,7 +27,7 @@ Pros
 - the developers would know how the microservices interact with each other even before deploying into a managed kubernetes cluster
 - this setup uses `Kind` a lightweight kubernetes cluster that can be used in any computer.
 - this setup mimics a kubernetes cluster and if the PoC is successful on a demo computer, all one has to do is apply the `kubernetes/*.yaml` file in the managed kubernetes cluster
-- it's very quick and easy to check application logs and connect to local `mySQL` database with virtually no lag. Again, please check the video that shows all the details of this application.
+- it's very quick and easy to check application logs and connect to local `mySQL` database with virtually no lag. Again, please check the [video](https://youtu.be/x8hrLbfF42U) that shows all the details of this application.
 
 Cons
 - Tried the option mentioned in the section [how to deploy using lambda function](https://github.com/desourav/on-man?tab=readme-ov-file#how-to-deploy-using-lambda-function), but the application would fetch `{"message": "Internal server error"}`
