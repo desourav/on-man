@@ -11,6 +11,14 @@ There are superheroes and then there is `on-man`.
 4. Production ready set up validated in kubernetes cluster in local
 5. Kubernetes resources under [kubernetes folder](kubernetes) that can be applied to any k8s cluster for a fully-functional application with persistent DB
 
+## Table of Content
+
+ 1. [assignment progress](#assignment-progress)
+ 2. [why run on-man in local](#why-run-on-man-in-local)
+ 3. [how to run on-man in local](#how-to-run-on-man-in-local)
+ 4. [how to deploy using lambda function](#how-to-deploy-using-lambda-function)
+ 5. [benefits of on-align application](#benefits-of-on-align-application)
+
 ## assignment progress
 
 The progress of each of the tasks can be found here:
