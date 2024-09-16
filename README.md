@@ -82,3 +82,8 @@ kind delete cluster
     - there is no way to integrate the app with a dockerized `mySQL` database. 
     - one option could be to create a mySQL instance - point the private endpoint and credentials to the express app as env variable
     - last but not the least, completing the functional requirement with express + mySQL in the PoC was of utmost importance. If time permits one can explore the AWS offerings and deploy the setup in a managed environment with lesser point of failure.
+
+
+## benefits of on-align application
+
+The objective and benefits of `on-align` application are detailed [here](./tasks/on-align-readme.md).
