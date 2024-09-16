@@ -18,22 +18,22 @@
 
 Career related:
 
-    1. As part of the genetics division, does the team get guidance, motivation to learn more about the domain, and does that help shape into a better technical contributor to the world of genetics?
+1. As part of the genetics division, does the team get guidance, motivation to learn more about the domain, and does that help shape into a better technical contributor to the world of genetics?
 
-    2. How important is the software engineering department to the overall making of a product? As Regeneron is primarily a pharmaceutical, biotechnology company, does the software team take a backseat, or it gets its share of appreciation behind a success story?
+2. How important is the software engineering department to the overall making of a product? As Regeneron is primarily a pharmaceutical, biotechnology company, does the software team take a backseat, or it gets its share of appreciation behind a success story?
 
-    3. Where do the engineering teams see themselves evolve to in the next five years? With the advent of foundational models (OpenAI, Llama, etc), do we see a shift in the way software solutions are built? 
+3. Where do the engineering teams see themselves evolve to in the next five years? With the advent of foundational models (OpenAI, Llama, etc), do we see a shift in the way software solutions are built? 
 
-    4. Is there a centralized common sharing of knowledge culture in Regeneron? There could be solutions already designed by other internal teams that one can re-use. Do we talk to other teams and share our milestones and mistakes?
+4. Is there a centralized common sharing of knowledge culture in Regeneron? There could be solutions already designed by other internal teams that one can re-use. Do we talk to other teams and share our milestones and mistakes?
 
 Technology related:
 
-    1. How is the overall SDLC done, do we include unit/integration tests using frameworks like `ava` or `mocha` and include them in the CICD pipeline?
+1. How is the overall SDLC done, do we include unit/integration tests using frameworks like `ava` or `mocha` and include them in the CICD pipeline?
 
-    2. How many environments do we have before a version gets deployed to Production?
+2. How many environments do we have before a version gets deployed to Production?
 
-    3. How do we do security patches of packages, is the application automatically scanned?
+3. How do we do security patches of packages, is the application automatically scanned?
 
-    4. How are metrics handled and communicated to developers (eg: high CPU/Memory usage, database reaching disk threshold, etc)
-    
-    5. How are users onboarded to the application?
+4. How are metrics handled and communicated to developers (eg: high CPU/Memory usage, database reaching disk threshold, etc)
+
+5. How are users onboarded to the application?
